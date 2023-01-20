@@ -1,9 +1,3 @@
-<h1 align="center">Vaultwarden Backup</h1>
-
-<p align="center">Script for vaultwarden backup</p>
-
-#### Script
-```bash
 #!/bin/bash
 VWDIR="/root/docker-storage/vaultwarden/data"
 
@@ -23,9 +17,3 @@ tar -Pczf $BACKUP $VWDIR
 rclone copy $BACKUP remote:/Vaultwarden/${FOLDERPATH}/
 
 rm $BACKUP
-```
-
-#### Crontab
-```bash
-0 */4 * * * /root/docker-storage/vaultwarden/vaultwarden_backup.sh
-```
